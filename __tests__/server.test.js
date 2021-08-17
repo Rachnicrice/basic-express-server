@@ -20,7 +20,7 @@ describe('Server API Testing:', () => {
   });
 
   it('sends 200 on good request w/ name in query string', () => {
-    mockRequest.get('/person?name=eragon')
+    mockRequest.get('/person?nameProvided=eragon')
       .then(result => {
         expect(result.status).toEqual(200);
       });
