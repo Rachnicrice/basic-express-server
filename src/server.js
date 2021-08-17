@@ -7,7 +7,9 @@ const logger = require('./middleware/logger.js');
 const validator = require('./middleware/validator.js');
 const app = express();
 
-app.get('/person', logger, validator, (req, res) => {
+app.use(logger);
+
+app.get('/person', validator, (req, res) => {
   res.status(200).json({name: `${req.nameProvided}`});
 });
 
