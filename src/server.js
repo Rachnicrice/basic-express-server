@@ -10,7 +10,7 @@ const app = express();
 app.use(logger);
 
 app.get('/person', validator, (req, res) => {
-  res.status(200).json({name: `${req.nameProvided}`});
+  res.status(200).json({name: `${req.query.nameProvided}`});
 });
 
 app.use('*', notFound);
