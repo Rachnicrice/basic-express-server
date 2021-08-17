@@ -2,7 +2,7 @@
 
 const express = require('express');
 const notFound = require('./error-handler/404.js');
-const errors = require('./error-handler/500.js');
+// const errors = require('./error-handler/500.js');
 const logger = require('./middleware/logger.js');
 const validator = require('./middleware/validator.js');
 const app = express();
@@ -14,7 +14,7 @@ app.get('/person', validator, (req, res) => {
 });
 
 app.use('*', notFound);
-app.use(errors); 
+// app.use(errors); 
 
 module.exports = {
   server: app,
