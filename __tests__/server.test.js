@@ -8,21 +8,21 @@ describe('Server API Testing:', () => {
     return mockRequest.get('/this-is-not-a-real-route')
       .then(result => {
         expect(result.status).toEqual(404);
-      })
-  })
+      });
+  });
 
   it('sends 500 if no name is in the query string', () => {
     mockRequest.get('/person')
       .then(result => {
         expect(result.status).toEqual(500);
-      })
+      });
 
-  })
+  });
 
   it('sends 200 on good request w/ name in query string', () => {
     mockRequest.get('/person?name=eragon')
       .then(result => {
-        expect(result.status).toEqual(200)
-      })
-  })
-})
+        expect(result.status).toEqual(200);
+      });
+  });
+});
